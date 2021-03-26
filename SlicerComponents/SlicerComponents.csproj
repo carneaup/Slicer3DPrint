@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="Copy &quot;$(TargetPath)&quot; &quot;C:\Users\carne\AppData\Roaming\Grasshopper\Libraries\$(ProjectName).gha&quot;&#xD;&#xA;Erase &quot;$(TargetPath)&quot;" />
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="Grasshopper" Version="8.0.21082.12305-wip" />
+    <PackageReference Include="RhinoCommon" Version="8.0.21082.12305-wip" />
+  </ItemGroup>
+
+</Project>
