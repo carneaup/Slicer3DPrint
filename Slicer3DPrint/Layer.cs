@@ -44,8 +44,20 @@ namespace Slicer.CORE
             }
         }
 
+        public double A_ { get; set; }
+
         public double InterLayerTime { get; set; }
         #endregion
+
+        public void EvaluateStructurationRatio()
+        {
+            foreach(Target t in Nodes)
+            {
+                double inverseVelocitySum = Nodes.Select(i => 1 / i.V_).Sum();
+            }
+        }
     }
+
+
 
 }
